@@ -1,0 +1,27 @@
+﻿{
+  "bindings": [
+    {
+      "name": "req",
+      "route": "employees",
+      "authLevel": "anonymous",
+      "methods": [
+        "post"
+      ],
+      "direction": "in",
+      "type": "httpTrigger"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "outputDocument",
+      "direction": "out",
+      "type": "cosmosDB",
+      "databaseName": "demo",
+      "collectionName": "employees",
+      "connectionStringSetting": "es-cosmos_DOCUMENTDB"
+    }
+  ]
+}

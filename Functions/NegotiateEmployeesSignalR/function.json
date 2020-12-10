@@ -1,0 +1,26 @@
+﻿{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "post"
+      ],
+      "name": "req",
+      "route": "employees/negotiate"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "signalRConnectionInfo",
+      "name": "connectionInfo",
+      "hubName": "employees",
+      "connectionStringSetting": "SignalRConnectionString",
+      "direction": "in"
+    }
+  ]
+}

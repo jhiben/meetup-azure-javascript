@@ -1,0 +1,37 @@
+﻿{
+  "bindings": [
+    {
+      "name": "req",
+      "route": "employees/{employeeId}/promote",
+      "authLevel": "anonymous",
+      "methods": [
+        "put"
+      ],
+      "direction": "in",
+      "type": "httpTrigger"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "inputDocument",
+      "direction": "in",
+      "type": "cosmosDB",
+      "databaseName": "demo",
+      "collectionName": "employees",
+      "connectionStringSetting": "es-cosmos_DOCUMENTDB",
+      "id": "{employeeId}",
+      "partitionKey": "{employeeId}"
+    },
+    {
+      "name": "outputDocument",
+      "direction": "out",
+      "type": "cosmosDB",
+      "databaseName": "demo",
+      "collectionName": "employees",
+      "connectionStringSetting": "es-cosmos_DOCUMENTDB"
+    }
+  ]
+}

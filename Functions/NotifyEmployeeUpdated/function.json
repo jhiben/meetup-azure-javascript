@@ -1,0 +1,21 @@
+﻿{
+  "bindings": [
+    {
+      "type": "cosmosDBTrigger",
+      "name": "documents",
+      "direction": "in",
+      "leaseCollectionName": "leases",
+      "connectionStringSetting": "es-cosmos_DOCUMENTDB",
+      "databaseName": "demo",
+      "collectionName": "employees",
+      "createLeaseCollectionIfNotExists": true
+    },
+    {
+      "name": "signalRMessages",
+      "direction": "out",
+      "type": "signalR",
+      "hubName": "employees",
+      "connectionStringSetting": "SignalRConnectionString"
+    }
+  ]
+}

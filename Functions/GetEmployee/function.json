@@ -1,0 +1,29 @@
+﻿{
+  "bindings": [
+    {
+      "name": "req",
+      "route": "employees/{employeeId}",
+      "authLevel": "anonymous",
+      "methods": [
+        "get"
+      ],
+      "direction": "in",
+      "type": "httpTrigger"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "inputDocument",
+      "direction": "in",
+      "type": "cosmosDB",
+      "databaseName": "demo",
+      "collectionName": "employees",
+      "connectionStringSetting": "es-cosmos_DOCUMENTDB",
+      "id": "{employeeId}",
+      "partitionKey": "{employeeId}"
+    }
+  ]
+}
